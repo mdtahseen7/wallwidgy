@@ -239,7 +239,7 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
         setIsLoading(true)
         setError(null)
 
-        const response = await fetch('https://raw.githubusercontent.com/not-ayan/storage/main/index.json', {
+        const response = await fetch('https://raw.githubusercontent.com/mdtahseen7/storage/master/index.json', {
           next: { revalidate: 3600 }, // Cache for 1 hour
         })
 
@@ -258,8 +258,8 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
           name: item.file_name,
           width: item.width,
           height: item.height,
-          preview_url: `https://raw.githubusercontent.com/not-ayan/storage/main/cache/${item.file_cache_name}`,
-          download_url: `https://raw.githubusercontent.com/not-ayan/storage/main/main/${item.file_main_name}`,
+          preview_url: `https://raw.githubusercontent.com/mdtahseen7/storage/master/cache/${item.file_cache_name}`,
+          download_url: `https://raw.githubusercontent.com/mdtahseen7/storage/master/main/${item.file_main_name}`,
           resolution: item.resolution,
           tag: item.orientation,
           platform: item.orientation,

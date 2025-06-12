@@ -77,7 +77,7 @@ export default function CategoriesPage() {
     const fetchCategoryImages = async () => {
       setIsLoading(true)
       try {
-        const response = await fetch('https://raw.githubusercontent.com/not-ayan/storage/main/index.json')
+        const response = await fetch('https://raw.githubusercontent.com/mdtahseen7/storage/master/index.json')
         if (!response.ok) throw new Error('Failed to fetch wallpapers')
         
         const data = await response.json()
@@ -92,7 +92,7 @@ export default function CategoriesPage() {
           
           if (wallpaper) {
             // Use the cache image URL which is likely smaller/optimized
-            images[category.id] = `https://raw.githubusercontent.com/not-ayan/storage/main/cache/${wallpaper.file_cache_name}`
+            images[category.id] = `https://raw.githubusercontent.com/mdtahseen7/storage/master/cache/${wallpaper.file_cache_name}`
           }
         })
         

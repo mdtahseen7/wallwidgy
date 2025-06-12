@@ -36,7 +36,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
   useEffect(() => {
     const fetchWallpapers = async () => {
       try {
-        const response = await fetch('https://raw.githubusercontent.com/not-ayan/storage/main/index.json')
+        const response = await fetch('https://raw.githubusercontent.com/mdtahseen7/storage/master/index.json')
         if (!response.ok) throw new Error('Failed to fetch wallpapers')
         
         const data = await response.json()

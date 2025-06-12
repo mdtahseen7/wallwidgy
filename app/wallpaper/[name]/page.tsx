@@ -26,7 +26,7 @@ export default function WallpaperPage() {
   useEffect(() => {
     async function fetchWallpaper() {
       try {
-        const response = await fetch('https://raw.githubusercontent.com/not-ayan/storage/main/index.json', {
+        const response = await fetch('https://raw.githubusercontent.com/mdtahseen7/storage/master/index.json', {
           next: { revalidate: 3600 }, // Cache for 1 hour
         })
 
