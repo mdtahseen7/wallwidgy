@@ -590,20 +590,41 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
       >
         {displayedWallpapers.map((wallpaper, index) => {
           const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-          
+          const aspectRatio = wallpaper.width && wallpaper.height ? wallpaper.width / wallpaper.height : 1.5;
           return (
             <div 
               key={wallpaper.sha} 
               className={`${favoriteIds ? 'mb-3 sm:mb-4' : 'mb-4 sm:mb-6'}`}
               style={{
                 animationDelay: `${index * 50}ms`,
-                animation: "fadeInUp 0.6s ease-out both"
+                animation: "fadeInUp 0.6s ease-out both",
+                width: '100%',
+                // Remove fixed aspect ratio, let height be dynamic
               }}
             >
               <div
-                className={`group relative ${favoriteIds ? 'aspect-[4/3]' : 'aspect-[3/2]'} overflow-hidden rounded-2xl bg-white/5 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-black/30`}
+                className={`group relative overflow-hidden rounded-2xl bg-white/5 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-black/30`}
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  aspectRatio: `${wallpaper.width} / ${wallpaper.height}`,
+                  // aspect-ratio is supported in modern browsers, fallback to auto if not
+                }}
               >
-                <ImageComponent wallpaper={wallpaper} index={index} />
+                <Image
+                  src={wallpaper.preview_url}
+                  alt={wallpaper.name}
+                  width={wallpaper.width}
+                  height={wallpaper.height}
+                  className={`object-cover transition-all duration-500 group-hover:scale-[1.02] w-full h-auto`}
+                  priority={index < 6}
+                  quality={75}
+                  placeholder="blur"
+                  loading={index < 12 ? "eager" : "lazy"}
+                  onLoadingComplete={() => setLoadedImages(prev => new Set(prev).add(wallpaper.sha))}
+                  onError={() => {}}
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALiAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkLzYvLy0vLzYvLy8vLy8vLy8vLy8vLy8vLz/2wBDAR0dHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eLz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                />
                 
                 {/* Enhanced gradient overlay with smoother transition */}
                 <div className="absolute inset-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100 sm:group-hover:opacity-100"
@@ -672,6 +693,7 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
                         e.stopPropagation();
                         e.nativeEvent.stopImmediatePropagation();
                         handleShare(wallpaper);
+                        return false;
                       }}
                       className="p-2 rounded-full bg-black/60 text-white hover:bg-black/70 backdrop-blur-sm transition-all duration-500 hover:scale-105 transform translate-y-4 group-hover:translate-y-0 z-10"
                       style={{ transitionDelay: '100ms' }}
@@ -684,6 +706,7 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
                         e.stopPropagation();
                         e.nativeEvent.stopImmediatePropagation();
                         handleOpenModal(wallpaper);
+                        return false;
                       }}
                       className="p-2 rounded-full bg-black/60 text-white hover:bg-black/70 backdrop-blur-sm transition-all duration-500 hover:scale-105 transform translate-y-4 group-hover:translate-y-0 z-10"
                       style={{ transitionDelay: '150ms' }}
