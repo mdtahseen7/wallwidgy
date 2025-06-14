@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-8">
             <Link 
-              href="https://x.com/notayan69" 
+              href="https://x.com/md_tahseen_7" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-white transition-colors"
@@ -17,7 +17,7 @@ export default function Footer() {
               <Twitter className="w-5 h-5" />
             </Link>
             <Link 
-              href="https://www.instagram.com/notayan_99" 
+              href="https://www.instagram.com/md_tahseen_7" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-white transition-colors"
@@ -25,7 +25,7 @@ export default function Footer() {
               <Instagram className="w-5 h-5" />
             </Link>
             <Link 
-              href="https://github.com/not-ayan" 
+              href="https://github.com/mdtahseen7" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-white transition-colors"
@@ -35,10 +35,10 @@ export default function Footer() {
           </div>
 
           <div className="order-first md:order-none">
-            <Link href="mailto:notayan99@gmail.com">
+            <Link href="mailto:mdtahseen7378@gmail.com">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image2-l5WVyj1lUkkbqQwuMEHCuDmCxHznok.png"
-                alt="Ayan's Logo"
+                alt="Tahseen's Logo"
                 width={40}
                 height={40}
                 className="hover:opacity-80 transition-opacity"

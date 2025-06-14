@@ -27,8 +27,8 @@ export default function About() {
         <div className="grid md:grid-cols-[300px_1fr] gap-8 mb-16">
           <div className="relative aspect-square rounded-3xl overflow-hidden bg-[#0A0A0A]">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/me-SlOED6Wcfz7pJOIEyAotbhuFVB7xVN.png"
-              alt="Ayan's Profile"
+              src="https://fpk090ataqguaiyr.public.blob.vercel-storage.com/160499103-5NasRAX0vavvPsyF4gSG1F10TDBaIb.png"
+              alt="Tahseen's Profile"
               fill
               className="object-cover"
             />
@@ -40,15 +40,17 @@ export default function About() {
               <span className="text-sm">SELF-SUMMARY</span>
             </div>
 
-            <h1 className="text-4xl font-bold">Ayan</h1>
+            <h1 className="text-4xl font-bold">Tahseen</h1>
             
             <p className="text-lg text-white/80">
-              Hi, I’m a new designer diving into web and UI design. I put together this wallpaper collection to share my love for simple, stylish looks that make your digital spaces feel just right.
+              Hi, I am Tahseen , a 19-year-old aspiring web and UI/UX designer based in Mumbai, India.
+              <br /><br />This website is originally created by <a href="https://github.com/not-ayan" target="_blank" rel="noopener noreferrer"><strong>Ayan</strong></a>, I just modified according to my will.
+              Check him out!
             </p>
 
             <div className="flex gap-4">
               <Link 
-                href="https://x.com/notayan69" 
+                href="https://x.com/md_tahseen_7" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-xl bg-white/5 text-white/60 hover:text-white hover:bg-white/10 transition-all"
@@ -56,7 +58,7 @@ export default function About() {
                 <Twitter className="w-5 h-5" />
               </Link>
               <Link 
-                href="https://www.instagram.com/notayan_99" 
+                href="https://www.instagram.com/md_tahseen_7" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-xl bg-white/5 text-white/60 hover:text-white hover:bg-white/10 transition-all"
@@ -64,7 +66,7 @@ export default function About() {
                 <Instagram className="w-5 h-5" />
               </Link>
               <Link 
-                href="https://github.com/not-ayan" 
+                href="https://github.com/mdtahseen7" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-xl bg-white/5 text-white/60 hover:text-white hover:bg-white/10 transition-all"
@@ -80,13 +82,13 @@ export default function About() {
             <h2 className="text-2xl font-bold">Experience</h2>
             <div className="space-y-4">
               <div className="p-6 rounded-2xl bg-white/5">
-                <div className="text-sm text-[#F7F06D]">2023 - Present</div>
-                <div className="font-medium mt-2">Learning web & ui design</div>
+                <div className="text-sm text-[#F7F06D]">2024 - Present</div>
+                <div className="font-medium mt-2">Learning Full Stack Web Development</div>
                 <div className="text-sm text-white/60 mt-1">Freelance</div>
               </div>
               <div className="p-6 rounded-2xl bg-white/5">
-                <div className="text-sm text-[#F7F06D]">2019 - 2023</div>
-                <div className="font-medium mt-2">Graphic Designer</div>
+                <div className="text-sm text-[#F7F06D]">2022-2024</div>
+                <div className="font-medium mt-2">CSC Operator</div>
                 <div className="text-sm text-white/60 mt-1">Freelance</div>
               </div>
             </div>
@@ -96,12 +98,12 @@ export default function About() {
             <h2 className="text-2xl font-bold">Education</h2>
             <div className="space-y-4">
               <div className="p-6 rounded-2xl bg-white/5">
-                <div className="text-sm text-[#F7F06D]">2021 - 2024</div>
-                <div className="font-medium mt-2">Honours in Mathematical Sciences</div>
-                <div className="text-sm text-white/60 mt-1">Chaiduar College</div>
+                <div className="text-sm text-[#F7F06D]">2024 - 2027</div>
+                <div className="font-medium mt-2">Bachelors of Science - Computer Science</div>
+                <div className="text-sm text-white/60 mt-1">Rizvi Education Society</div>
               </div>
               <div className="p-6 rounded-2xl bg-white/5">
-                <div className="text-sm text-[#F7F06D]">2019 - 2021</div>
+                <div className="text-sm text-[#F7F06D]">2022 - 2024</div>
                 <div className="font-medium mt-2">Almost done with school, college is up next!</div>
                 <div className="text-sm text-white/60 mt-1">School</div>
               </div>
@@ -120,12 +122,12 @@ export default function About() {
             </p>
           </Link>
           <Link 
-            href="mailto:notayan99@gmail.com"
+            href="mailto:mdtahseen7378@gmail.com"
             className="group p-6 rounded-2xl bg-white/5 hover:bg-white/10 transition-all"
           >
             <h3 className="font-medium mb-2">Get in Touch</h3>
             <p className="text-sm text-white/60">
-              Have questions or just want to chat about design? Feel free to reach out!
+              Got something in mind? Drop a message anytime!
             </p>
           </Link>
         </div>
