@@ -649,15 +649,15 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
                 />
                 
                 {/* Content with enhanced animations */}
-                <div className="absolute inset-0 flex flex-col justify-end p-5 opacity-0 group-hover:opacity-100 sm:group-hover:opacity-100 transition-all duration-500 group-hover:translate-y-[-4px] pointer-events-none">
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-[15px] font-medium text-white/90 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                <div className="absolute inset-0 flex flex-col justify-end p-3 sm:p-5 opacity-0 group-hover:opacity-100 sm:group-hover:opacity-100 transition-all duration-500 group-hover:translate-y-[-4px] pointer-events-none">
+                  <div className="flex items-center justify-between mb-2 sm:mb-3">
+                    <h3 className="text-[13px] sm:text-[15px] font-medium text-white/90 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
                       {wallpaper.name}
                     </h3>
                   </div>
                   
                   {/* Action buttons with staggered animation */}
-                  <div className="flex items-center gap-2 pointer-events-auto">
+                  <div className="flex items-center gap-1.5 sm:gap-2 pointer-events-auto">
                     <button
                       onClick={(e) => {
                         e.preventDefault();
@@ -667,14 +667,14 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
                         toggleWallpaperSelection(wallpaper.sha);
                         return false;
                       }}
-                      className={`p-2 rounded-full ${
+                      className={`p-1.5 sm:p-2 rounded-full ${
                         selectedWallpapers.includes(wallpaper.sha)
                           ? "bg-[var(--accent-light)] text-black"
                           : "bg-black/60 text-white hover:bg-black/70"
                       } backdrop-blur-sm transition-all duration-500 hover:scale-105 transform translate-y-4 group-hover:translate-y-0 z-10`}
                       style={{ transitionDelay: '0ms' }}
                     >
-                      <Download className="w-4 h-4" />
+                      <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </button>
                     <button
                       onClick={(e) => {
@@ -684,14 +684,14 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
                         handleFavorite(wallpaper);
                         return false;
                       }}
-                      className={`p-2 rounded-full ${
+                      className={`p-1.5 sm:p-2 rounded-full ${
                         favorites.includes(wallpaper.sha)
                           ? "bg-black/60 text-[#FF0000]"
                           : "bg-black/60 text-white hover:bg-black/70"
                       } backdrop-blur-sm transition-all duration-500 hover:scale-105 transform translate-y-4 group-hover:translate-y-0 z-10`}
                       style={{ transitionDelay: '50ms' }}
                     >
-                      <Heart className={`w-4 h-4 ${favorites.includes(wallpaper.sha) ? "fill-[#FF0000]" : ""}`} />
+                      <Heart className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${favorites.includes(wallpaper.sha) ? "fill-[#FF0000]" : ""}`} />
                     </button>
                     <button
                       onClick={(e) => {
@@ -701,10 +701,10 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
                         handleShare(wallpaper);
                         return false;
                       }}
-                      className="p-2 rounded-full bg-black/60 text-white hover:bg-black/70 backdrop-blur-sm transition-all duration-500 hover:scale-105 transform translate-y-4 group-hover:translate-y-0 z-10"
+                      className="p-1.5 sm:p-2 rounded-full bg-black/60 text-white hover:bg-black/70 backdrop-blur-sm transition-all duration-500 hover:scale-105 transform translate-y-4 group-hover:translate-y-0 z-10"
                       style={{ transitionDelay: '100ms' }}
                     >
-                      <Share2 className="w-4 h-4" />
+                      <Share2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </button>
                     <button
                       onClick={(e) => {
@@ -714,19 +714,19 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
                         handleOpenModal(wallpaper);
                         return false;
                       }}
-                      className="p-2 rounded-full bg-black/60 text-white hover:bg-black/70 backdrop-blur-sm transition-all duration-500 hover:scale-105 transform translate-y-4 group-hover:translate-y-0 z-10"
+                      className="p-1.5 sm:p-2 rounded-full bg-black/60 text-white hover:bg-black/70 backdrop-blur-sm transition-all duration-500 hover:scale-105 transform translate-y-4 group-hover:translate-y-0 z-10"
                       style={{ transitionDelay: '150ms' }}
                     >
-                      <Expand className="w-4 h-4" />
+                      <Expand className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </button>
                   </div>
                 </div>
                 
                 {/* Enhanced badges with animations */}
-                <div className="absolute top-3 left-3 bg-[var(--accent-light)] text-black px-2 py-1 rounded-full text-xs font-medium transition-all duration-500 transform translate-y-[-2px] group-hover:translate-y-0 group-hover:shadow-lg">
+                <div className="absolute top-2 sm:top-3 left-2 sm:left-3 bg-[var(--accent-light)] text-black px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium transition-all duration-500 transform translate-y-[-2px] group-hover:translate-y-0 group-hover:shadow-lg">
                   {wallpaper.resolution}
                 </div>
-                <div className="absolute top-3 right-3 bg-white/10 text-white px-2 py-1 rounded-full text-xs font-medium backdrop-blur-sm transition-all duration-500 transform translate-y-[-2px] group-hover:translate-y-0 group-hover:bg-white/20">
+                <div className="absolute top-2 sm:top-3 right-2 sm:right-3 bg-white/10 text-white px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium backdrop-blur-sm transition-all duration-500 transform translate-y-[-2px] group-hover:translate-y-0 group-hover:bg-white/20">
                   {wallpaper.tag}
                 </div>
                 
