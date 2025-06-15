@@ -527,16 +527,16 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
   const breakpointColumnsObj: { [key: string]: number } = favoriteIds ? {
     default: 3,
     '1100': 2,
-    '700': 1
+    '768': 2
   } : categoryFilter ? {
     default: 3,
     '1100': 2,
-    '700': 1
+    '768': 2
   } : {
     default: 4,
     '1400': 3,
     '1100': 2,
-    '700': 1
+    '768': 2
   }
 
   // Replace the original ImageComponent with the stable one
