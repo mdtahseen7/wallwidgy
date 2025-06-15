@@ -273,8 +273,14 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
           wallpapers = wallpapers.filter(wallpaper => wallpaper.category === categoryFilter)
         }
 
-        // Sort wallpapers by newest first
-        wallpapers.sort((a: any, b: any) => b.uploadDate.getTime() - a.uploadDate.getTime())
+        // Shuffle wallpapers for random order
+        for (let i = wallpapers.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [wallpapers[i], wallpapers[j]] = [wallpapers[j], wallpapers[i]];
+        }
+
+        // Sort by newest if needed (optional, comment out if you want pure random)
+        // wallpapers.sort((a: any, b: any) => b.uploadDate.getTime() - a.uploadDate.getTime())
 
         setWallpapersState(wallpapers)
         setDisplayedWallpapers(wallpapers.slice(0, initialLoadSize))
