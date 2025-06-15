@@ -44,8 +44,7 @@ export default function About() {
             
             <p className="text-lg text-white/80">
               Hi, I am Tahseen , a 19-year-old aspiring web and UI/UX designer based in Mumbai, India.
-              <br /><br />This website is originally created by <a href="https://github.com/not-ayan" target="_blank" rel="noopener noreferrer"><strong>Ayan</strong></a>, I just modified according to my will.
-              Check him out!
+
             </p>
 
             <div className="flex gap-4">
