@@ -8,7 +8,7 @@ interface HeaderProps {
 
 export default function Header({ showBackButton = false, backUrl = "/" }: HeaderProps) {
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/80 backdrop-blur-md">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
       <header className="px-4 sm:px-12 py-5">
         <nav className="flex justify-between items-center max-w-[1600px] mx-auto">
           <div className="flex items-center gap-4">
@@ -20,7 +20,7 @@ export default function Header({ showBackButton = false, backUrl = "/" }: Header
                 <ArrowLeft className="w-5 h-5" />
               </Link>
             )}
-            <Link href="/" className="text-[var(--accent-light)] hover:text-white transition-all font text-xl sm:text-lg">
+            <Link href="/" className="text-white hover:text-white/80 transition-all font text-xl sm:text-lg tracking-[0.15em] uppercase">
               WallWidgy
             </Link>
           </div>

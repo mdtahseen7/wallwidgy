@@ -126,7 +126,7 @@ export default function CategoriesPage() {
             <Link
               key={category.id}
               href={`/categories/${category.id}`}
-              className="group relative aspect-[5/4] rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-black/30"
+              className="group relative aspect-[5/4] rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.015] hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40 border border-white/10"
               style={{
                 animationDelay: `${index * 100}ms`,
                 animation: "fadeInUp 0.6s ease-out both"
@@ -144,7 +144,7 @@ export default function CategoriesPage() {
                     priority={index < 3}
                   />
                 ) : (
-                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-zinc-800/80 to-black/80">
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/80">
                     {isLoading ? (
                       <div className="w-8 h-8 border-2 border-white/20 border-t-white/80 rounded-full animate-spin"></div>
                     ) : (
@@ -160,19 +160,13 @@ export default function CategoriesPage() {
                     )}
                   </div>
                 )}
-                <div 
-                  className="absolute inset-0 transition-opacity duration-500 opacity-100 group-hover:opacity-90"
-                  style={{
-                    background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.3) 100%)"
-                  }}
-                />
+                <div className="absolute inset-0 bg-black/60 transition-opacity duration-500 opacity-100 group-hover:opacity-80" />
               </div>
               
               {/* Content */}
               <div className="absolute inset-0 flex flex-col items-center justify-end p-6 sm:p-8 text-center transition-all duration-500 group-hover:translate-y-[-8px]">
                 <div 
-                  className="mb-4 transition-all duration-500 group-hover:scale-125 group-hover:mb-6 drop-shadow-glow"
-                  style={{ filter: "drop-shadow(0 0 8px rgba(255,255,255,0.3))" }}
+                  className="mb-4 transition-all duration-500 group-hover:scale-110 group-hover:mb-6"
                 >
                   <Image 
                     src={category.icon}

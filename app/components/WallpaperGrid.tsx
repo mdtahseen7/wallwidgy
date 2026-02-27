@@ -515,7 +515,7 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
         <p className="text-red-500 mb-4">{error}</p>
         <button
           onClick={handleRetry}
-          className="bg-[var(--accent-light)] text-black px-4 py-2 rounded-full hover:bg-[var(--accent-light)]/90 transition-all flex items-center gap-2 mx-auto"
+          className="bg-white text-black px-4 py-2 rounded-full hover:bg-white/90 transition-all flex items-center gap-2 mx-auto"
         >
           <RefreshCw className="w-4 h-4" />
           <span>Retry</span>
@@ -571,7 +571,7 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
               }
               showNotification("Started downloading all favorites")
             }}
-            className="bg-[var(--accent-light)] text-black px-4 sm:px-5 py-2 sm:py-2.5 rounded-full hover:bg-[var(--accent-light)]/90 transition-all text-xs sm:text-sm font-medium flex items-center gap-2"
+            className="bg-white text-black px-4 sm:px-5 py-2 sm:py-2.5 rounded-full hover:bg-white/90 transition-all text-xs sm:text-sm font-medium flex items-center gap-2"
           >
             <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             Download All
@@ -609,7 +609,7 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
               }}
             >
               <div
-                className={`group relative overflow-hidden rounded-2xl bg-white/5 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-black/30`}
+                className={`group relative overflow-hidden rounded-2xl bg-white/5 transition-all duration-500 hover:scale-[1.018] hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40`}
                 style={{
                   width: '100%',
                   height: 'auto',
@@ -632,12 +632,8 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALiAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkLzYvLy0vLzYvLy8vLy8vLy8vLy8vLy8vLz/2wBDAR0dHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eHR4eLz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 />
                 
-                {/* Enhanced gradient overlay with smoother transition */}
-                <div className="absolute inset-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100 sm:group-hover:opacity-100"
-                  style={{
-                    background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.2) 100%)"
-                  }}
-                />
+                {/* Minimal dark overlay with smooth reveal */}
+                <div className="absolute inset-0 bg-black/65 transition-opacity duration-500 opacity-0 group-hover:opacity-100 sm:group-hover:opacity-100" />
                 
                 {/* Clickable area for modal - only active on desktop */}
                 <div 
@@ -669,7 +665,7 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
                       }}
                       className={`p-1.5 sm:p-2 rounded-full ${
                         selectedWallpapers.includes(wallpaper.sha)
-                          ? "bg-[var(--accent-light)] text-black"
+                          ? "bg-white text-black"
                           : "bg-black/60 text-white hover:bg-black/70"
                       } backdrop-blur-sm transition-all duration-500 hover:scale-105 transform translate-y-4 group-hover:translate-y-0 z-10`}
                       style={{ transitionDelay: '0ms' }}
@@ -723,7 +719,7 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
                 </div>
                 
                 {/* Enhanced badges with animations */}
-                <div className="absolute top-2 sm:top-3 left-2 sm:left-3 bg-[var(--accent-light)] text-black px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium transition-all duration-500 transform translate-y-[-2px] group-hover:translate-y-0 group-hover:shadow-lg">
+                <div className="absolute top-2 sm:top-3 left-2 sm:left-3 bg-white text-black px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium transition-all duration-500 transform translate-y-[-2px] group-hover:translate-y-0 group-hover:shadow-lg">
                   {wallpaper.resolution}
                 </div>
                 <div className="absolute top-2 sm:top-3 right-2 sm:right-3 bg-white/10 text-white px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium backdrop-blur-sm transition-all duration-500 transform translate-y-[-2px] group-hover:translate-y-0 group-hover:bg-white/20">
@@ -746,7 +742,7 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
             className="bg-black/80 text-white px-5 py-2.5 rounded-full hover:bg-black/90 transition-all text-[13px] font-medium flex items-center gap-2 animate-bounce backdrop-blur-lg border border-white/10"
             style={{ width: "auto" }}
           >
-            <Download className="w-4 h-4 text-[var(--accent-light)]" />
+            <Download className="w-4 h-4 text-white" />
             Download Selected ({selectedWallpapers.length})
           </button>
         </div>
@@ -756,14 +752,14 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
         <div className="bg-black/60 backdrop-blur-sm rounded-full p-2 flex gap-2">
           <button
             onClick={() => handleFilterChange("all")}
-            className={`px-3 py-1 rounded-full text-xs ${filter === "all" ? "bg-[var(--accent-light)] text-black" : "text-white"}`}
+            className={`px-3 py-1 rounded-full text-xs ${filter === "all" ? "bg-white text-black" : "text-white"}`}
           >
             All
           </button>
           <button
             onClick={() => handleFilterChange("desktop")}
             className={`px-3 py-1 rounded-full text-xs ${
-              filter === "desktop" ? "bg-[var(--accent-light)] text-black" : "text-white"
+              filter === "desktop" ? "bg-white text-black" : "text-white"
             }`}
           >
             Desktop
@@ -771,7 +767,7 @@ export default function WallpaperGrid({ wallpapers: favoriteIds, categoryFilter 
           <button
             onClick={() => handleFilterChange("mobile")}
             className={`px-3 py-1 rounded-full text-xs ${
-              filter === "mobile" ? "bg-[var(--accent-light)] text-black" : "text-white"
+              filter === "mobile" ? "bg-white text-black" : "text-white"
             }`}
           >
             Mobile

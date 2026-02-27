@@ -15,12 +15,7 @@
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
     font-family: var(--font-outfit), system-ui, sans-serif;
     color: rgb(var(--foreground-rgb));
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        rgb(var(--background-end-rgb))
-      )
-      rgb(var(--background-start-rgb));
+    background: rgb(var(--background-start-rgb));
   }
 }
 
@@ -41,61 +36,20 @@
 }
 
 .animated-gradient {
-  background: linear-gradient(
-    90deg,
-    var(--accent-light) 0%,
-    var(--accent-dark) 100%
-  );
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: gradient 8s ease infinite;
+  color: var(--accent-light);
+  letter-spacing: -0.03em;
+  text-shadow: 0 0 22px rgba(255, 255, 255, 0.2);
+  animation: subtleGlow 3.2s ease-in-out infinite;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
+@keyframes subtleGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 16px rgba(255, 255, 255, 0.12);
   }
   50% {
-    background-position: 100% 50%;
+    text-shadow: 0 0 28px rgba(255, 255, 255, 0.3);
   }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes borderGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.gradient-border {
-  position: relative;
-  background: #0a0a0a;
-  border: 2px solid transparent;
-  background-clip: padding-box;
-}
-
-.gradient-border::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  bottom: -2px;
-  left: -2px;
-  z-index: -1;
-  border-radius: inherit;
-  background: linear-gradient(90deg, #f7f06d, transparent 50%, #f7f06d);
-  background-size: 200% 100%;
-  animation: borderGradient 3s linear infinite;
 }
 
 .my-masonry-grid {
@@ -162,6 +116,6 @@
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 10, 10, 10;
   --background-end-rgb: 10, 10, 10;
-  --accent-light: #fff8cf;
-  --accent-dark: #ffe555;
+  --accent-light: #ffffff;
+  --accent-dark: #ffffff;
 }

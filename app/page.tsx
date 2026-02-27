@@ -22,10 +22,10 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#0A0A0A]">
       {/* Header */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/80 backdrop-blur-md">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
         <header className="px-4 sm:px-12 py-5">
           <nav className="flex justify-between items-center max-w-[1600px] mx-auto">
-            <Link href="/" className="text-[var(--accent-light)] hover:text-white transition-all font text-xl sm:text-lg pl-4">
+            <Link href="/" className="text-white hover:text-white/80 transition-all font text-xl sm:text-lg pl-4 tracking-[0.15em] uppercase">
               WallWidgy
             </Link>
             <div className="flex items-center gap-4 pr-4">
@@ -49,8 +49,9 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="px-8 pt-28 sm:pt-32 pb-16 sm:pb-24 text-center">
+        <p className="text-white/50 uppercase tracking-[0.35em] text-xs mb-6">Curated visuals · minimal UI</p>
         <h1 className="font-title text-[56px] sm:text-[120px] max-w-[900px] mx-auto leading-[1.1] tracking-[-0.02em] animated-gradient">
-          The only wallpaper site you need
+          Designed for dark screens
         </h1>
         <p className="mt-4 text-white/60 max-w-[600px] mx-auto text-base sm:text-lg leading-relaxed">
           Carefully curated wallpapers that bring elegance and simplicity to your screens. Download and enjoy our
@@ -69,4 +70,3 @@ export default function Home() {
     </main>
   )
 }
-
